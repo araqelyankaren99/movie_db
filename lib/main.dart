@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:movie_db/src/domain/services/app_config.dart';
 
-void main() {
+Future<void> main() async{
+  final appConfigService = AppConfigService();
+  await appConfigService.initAppConfig();
   runApp(const MyApp());
 }
 
@@ -10,6 +13,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
